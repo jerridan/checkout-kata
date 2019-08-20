@@ -1,10 +1,17 @@
 class Checkout
-
-  def scan(_sku)
-    nil
+  def scan(sku)
+    @sku = sku
   end
 
   def total
-    0
+    if sku === "A"
+      50
+    else
+      0
+    end
   end
+
+  private
+
+  attr_accessor :sku
 end
