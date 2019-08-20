@@ -1,21 +1,20 @@
 class Checkout
+
+  PRICES = {
+    A: 50,
+    B: 30,
+    C: 20,
+    D: 15
+  }
+
   def scan(sku)
-    @sku = sku
+    @sku = sku.to_sym
   end
 
   def total
-    case sku
-    when "A"
-      50
-    when "B"
-      30
-    when "C"
-      20
-    when "D"
-      15
-    else
-      0
-    end
+    return 0 unless PRICES.has_key?(sku)
+
+    PRICES.fetch(sku)
   end
 
   private
