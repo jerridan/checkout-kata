@@ -4,8 +4,15 @@ class Checkout
   end
 
   def total
-    if sku === "A"
+    case sku
+    when "A"
       50
+    when "B"
+      30
+    when "C"
+      20
+    when "D"
+      15
     else
       0
     end
